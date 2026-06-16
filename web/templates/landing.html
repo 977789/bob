@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mirror Hunter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #111827; color: #f9fafb; font-family: 'Montserrat', sans-serif; margin: 0; }
+        .container { max-width: 650px; margin: 40px auto; background: #1f2937; border-radius: 18px; box-shadow: 0 2px 32px #0006; padding: 2.5rem; }
+        h1, h2 { color: #22d3ee; font-weight: 700; margin-top: 0; }
+        h1 { font-size: 2.3rem; }
+        .logo { font-size: 2.8rem; color: #bbf7d0; margin-bottom: 0.25em; letter-spacing: 1px; }
+        .subtle { color: #a1a1aa; font-weight: 500; font-size: 1.05em; }
+        ul { list-style-type: none; padding: 0; }
+        ul li { margin-bottom: 12px; padding-left: 24px; position: relative; }
+        ul li:before { content: "✓"; position: absolute; left: 0; color: #22d3ee; font-weight: bold;}
+        .footer { margin-top: 2.5rem; color: #a1a1aa; font-size: 1rem; }
+        .links a { color: #22d3ee; text-decoration: none; margin-right: 12px; border-bottom: 1px dotted #22d3ee; }
+        .shop-btn { background: #14b8a6; color: #fff; padding: 12px 28px; border-radius: 7px; font-size: 1.3rem; border: none; cursor: pointer; transition:.2s; }
+        .shop-btn:hover { background: #164e63;}
+        .in-dev-modal { display: none; position: fixed; top: 0; left:0; width: 100vw; height: 100vh; background: #000a; align-items: center; justify-content: center;}
+        .modal-box { background: #18181b; color: #fff; padding: 34px 42px; border-radius: 15px; box-shadow: 0 4px 24px #333b; text-align:center; }
+        .modal-box button { margin-top:16px; font-size:1.1rem; padding:8px 22px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Mirror Hunter</div>
+        <div class="subtle">Advance-Automation • Stable • Reliable</div>
+        <h2>Bot Status: <span style="color:#4ade80">Online</span></h2>
+        <div>Uptime: <span id="uptime">--:--:--</span></div>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Download from torrents, direct links, YouTube, and 1,000+ sites</li>
+                <li>Upload to Google Drive, Rclone, GoFile, or Telegram</li>
+                <li>Bulk, batch, and multi-link support</li>
+                <li>File selection for torrents, JDownloader, NZB</li>
+                <li>Extract, zip, split, join; thumbnails and screenshots</li>
+                <li>Media conversion, advanced yt-dlp options</li>
+                <li>RSS automation, Drive tools: Clone, count, search</li>
+                <li>Custom configurations and automation for every user</li>
+            </ul>
+            <div class="links">
+                <a href="https://t.me/MirrorHunterUpdates" target="_blank">Join Telegram</a>
+                <button class="shop-btn" id="shopBtn">Shop</button>
+            </div>
+            <div class="footer">
+                &copy; 2025 Mirror Hunter. All rights reserved.<br>
+            </div>
+        </section>
+    </div>
+    <div class="in-dev-modal" id="shopModal">
+        <div class="modal-box">
+            <h2 style="color:#22d3ee;">Shop – In Development</h2>
+            <p>This feature is currently under development.<br/>Please check back soon!</p>
+            <button onclick="document.getElementById('shopModal').style.display='none'">Close</button>
+        </div>
+    </div>
+    <script>
+        // Show modal on Shop button click
+        document.getElementById('shopBtn').onclick = function() {
+            document.getElementById('shopModal').style.display = 'flex';
+        };
+        // Dummy uptime—implement server logic for real
+        setInterval(function(){
+            var dt = new Date(Date.now()-(1000*60*60));
+            document.getElementById("uptime").textContent =
+              (dt.getUTCHours()+"h "+
+               dt.getUTCMinutes().toString().padStart(2, "0")+"m "+
+               dt.getUTCSeconds().toString().padStart(2,"0")+"s");
+        }, 1000);
+    </script>
+</body>
+</html>

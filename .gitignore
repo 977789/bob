@@ -1,0 +1,25 @@
+.venv/*
+config.py
+token.pickle
+rclone.conf
+.netrc
+log.txt
+cfg.zip
+accounts/*
+accounts
+thumbnails/*
+# Test files
+test_*.py
+demo_*.py
+rclone/*
+tokens/*
+mediainfo/*
+sabnzbd/*
+list_drives.txt
+shortener.txt
+cookies.txt
+downloads/*
+.env
+__pycache__/
+*.py[cod]
+*$py.class
