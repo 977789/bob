@@ -26,7 +26,7 @@ pillow
 psutil
 pycountry
 pymongo
-pyrogram==2.2.11
+pyrofork==2.2.24
 python-magic
 pytz
 qbittorrent-api
