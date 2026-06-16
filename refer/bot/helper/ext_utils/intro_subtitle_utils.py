@@ -55,8 +55,8 @@ COLOR_NAME_MAP = {
 
 DEFAULT_COLORS = ["#FF0000", "#0000FF", "#00FF00", "#FFA500", "#800080", "#000000"]
 
-HEX_TO_ASS = (
-    lambda h: f"&H00{h[5:7]}{h[3:5]}{h[1:3]}"
+HEX_TO_ASS = lambda h: (
+    f"&H00{h[5:7]}{h[3:5]}{h[1:3]}"
     if re.match(r"^#?[0-9A-Fa-f]{6}$", h)
     else "&H00FFFFFF"
 )
